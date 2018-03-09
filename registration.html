@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title>Регистрация пользователя</title>
+	<title>Регистрация</title>
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,8 +11,10 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/reg.js"></script>
 	
 </head>
+	
 <body>
 <header>
 <nav class="header navbar navbar-default">
@@ -39,9 +41,70 @@
 </nav>
 </header>
 
-<footer>
+<div class="container">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+    		<h1 class="panel-title"><b>Регистрация нового пользователя</b></h1>
+  		</div>
+  		<div class="panel-body">
+			<form name="reg">
+				<div class="form-group row">
+					<label for="inputEmail" class="col-sm-3 col-form-label">Логин</label>
+					<div class="col-sm-8">
+						<div class="input-group">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+    					<input type="email" class="form-control" id="inputEmail" placeholder="Введите ваш E-mail адрес" required></div>
+    				</div>
+    				 
 
-<nav class="footer navbar navbar-default">
+				</div>
+				<div class="form-group row">
+					<label for="inputPassword" class="col-sm-3 col-form-label">Пароль</label>
+					<div class="col-sm-8">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+    					<input type="password" class="form-control" id="InputPassword" name="password" placeholder="придумайте ваш пароль" required>
+    					</div>
+    				</div>
+    				<div class="col-sm-13">
+    					<div class="myalert alert alert-warning" id="al">
+ 							 <strong>Предупреждение!</strong> Длина пароля должна составлять 8-20 символов
+						</div>
+    				</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputPassword" class="col-sm-3 col-form-label">Подтверждение</label>
+					<div class="col-sm-8">
+    					<input type="password" class="form-control" id="InputPassword2" placeholder="повторите ваш пароль" required>
+    				</div>
+    				<div class="col-sm-13">
+    					<div class="myalert alert alert-danger" id="pas">
+						  	<strong>Ошибка!</strong> Пароли должны совпадать.
+						</div>
+    				</div>
+				</div>
+				<div class="form-group row">
+					<div class="col-sm-offset-4">
+						<input type="checkbox" onchange="if ($('#InputPassword').get(0).type=='password') {$('#InputPassword').get(0).type='text';
+							$('#InputPassword2').get(0).type='text';
+					} else {$('#InputPassword').get(0).type='password';
+					$('#InputPassword2').get(0).type='password';
+				}
+					" class="form-check-input" id="exampleCheck1" value="false">
+					
+    				<label class="col-check-label" for="exampleCheck1">Показать пароль</label>
+    				</div>
+				</div>
+				<button type="submit" class="btn btn-primary" onclick="return check();">Зарегистрироваться</button>
+			</form>
+  		</div>
+	</div>
+</div>
+
+
+
+<footer>
+<nav class="footer navbar navbar-bottom navbar-default">
 	<div class="container-fluid">
 
 	    <ul class="nav navbar-nav">

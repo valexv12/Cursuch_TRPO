@@ -45,3 +45,13 @@
  #social-em:hover {
      color: #f39c12;
  }
+label{
+	font-weight: normal;
+}
+form-group1{
+	display:inline-block;
+}
+.myalert{
+	padding:10px;
+	display:none;
+}
