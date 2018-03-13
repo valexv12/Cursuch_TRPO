@@ -12,7 +12,7 @@
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/reg.js"></script>
-	
+	<script src="js/jquery.maskedinput.js"></script>
 </head>
 	
 <body>
@@ -40,14 +40,14 @@
   	</div>
 </nav>
 </header>
-
+<main>
 <div class="container">
 	<div class="panel panel-default">
 		<div class="panel-heading">
     		<h1 class="panel-title"><b>Регистрация нового пользователя</b></h1>
   		</div>
   		<div class="panel-body">
-			<form name="reg">
+			<form name="reg" id="registr">
 				<div class="form-group row">
 					<label for="inputEmail" class="col-sm-3 col-form-label">Логин</label>
 					<div class="col-sm-8">
@@ -55,8 +55,6 @@
 						<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
     					<input type="email" class="form-control" id="inputEmail" placeholder="Введите ваш E-mail адрес" required></div>
     				</div>
-    				 
-
 				</div>
 				<div class="form-group row">
 					<label for="inputPassword" class="col-sm-3 col-form-label">Пароль</label>
@@ -95,16 +93,33 @@
     				<label class="col-check-label" for="exampleCheck1">Показать пароль</label>
     				</div>
 				</div>
+				<div class="form-group row">
+					<label for="inputName" class="col-sm-3 col-form-label">Имя</label>
+					<div class="col-sm-8">
+    					<input type="text" class="form-control" placeholder="Иван" required>
+    				</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputLastName" class="col-sm-3 col-form-label">Фамилия</label>
+					<div class="col-sm-8">
+    					<input type="text" class="form-control" placeholder="Иванов" required>
+    				</div>
+				</div>
+				<div class="form-group row">
+					<label for="inputPhone" class="col-sm-3 col-form-label">Телефон</label>
+					<div class="col-sm-8">
+    					<input type="tel" class="form-control" placeholder="+7(954)-234-55-33" required id="phone">
+    				</div>
+				</div>
 				<button type="submit" class="btn btn-primary" onclick="return check();">Зарегистрироваться</button>
 			</form>
   		</div>
 	</div>
 </div>
-
-
+</main>
 
 <footer>
-<nav class="footer navbar navbar-bottom navbar-default">
+<nav class="footer navbar navbar-bottom navbar-default" id="wrap">
 	<div class="container-fluid">
 
 	    <ul class="nav navbar-nav">
@@ -125,6 +140,37 @@
 
 
 </footer>
+
+<div id="myModalBox" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+     
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Успешная регистрация</h4>
+      </div>
+      
+      <div class="modal-body">
+        <div class="alert alert-success">
+  <strong>Регистрация прошла успешно!</strong> Для подтверждения проверьте свой почтовый ящик!
+</div>
+      </div>
+     
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="location.href='index.html';" >Закрыть</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+	$("#registr").on("submit", function(){
+   $("#myModalBox").modal('show');
+   return false;
+ });
+	$("#phone").mask("+7(999)999-99-99");
+</script>
+
 
 </body>
 </html>

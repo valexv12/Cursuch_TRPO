@@ -11,6 +11,7 @@
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script src="js/date.js"></script>
 	
 </head>
 	
@@ -39,11 +40,11 @@
   	</div>
 </nav>
 </header>
-
+<main>
 <div class="container">
 	<div class="row">
 		<div class="col-md-4 panel panel-default"> <!-- Покупка билетов-->
-			<form>
+			<form action="train.html">
 				<center><h4>Покупка билета</h4></center><hr>
 				
 				  <div class="form-group">
@@ -53,7 +54,7 @@
 				    <p><label for="to">Куда:</label>
 				    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Ростов-на-Дону"></p>
 				    <p><label for="date">Когда:</label>
-				   	<input type="date" class="form-control"></p>
+				   	<input type="date" class="form-control" id="mydate"></p>
 				  </div>
 				  <center><button type="submit" class="btn btn-primary">Найти</button></center>
 			</form>
@@ -166,7 +167,7 @@
 
 
 </div>
-
+</main>
 <footer>
 
 <nav class="footer navbar navbar-bottom navbar-default">

@@ -1,13 +1,31 @@
+
+
 .myrow {margin-left: 0; margin-right: 0;}
 .mycol {padding-left: 0; padding-right:0;}
 .myjumb{padding-top:10; margin-top:25;}
 .myheader{margin-bottom:5;}
 .footer{
-	margin-bottom: 0;
 	padding:25px;
+	bottom:0;
+	margin-bottom:0;
+}
+footer{
+	height: 10%;
+}
+main{
+	min-height:80%;
+	height:auto;
+}
+.myform{
+	margin:25px;
+}
+header{
+	height:10%;
+	margin-bottom:40px;
 }
 .header{
 	padding:10px;
+	
 }
 .socnets_icons{
 	padding-left:110px;
@@ -54,4 +72,32 @@ form-group1{
 .myalert{
 	padding:10px;
 	display:none;
+}
+
+body{
+	height:100%;
+}
+.breadcrumb>li+li:before {
+	content: "\2771\00a0";
+}
+
+.breadcrumb {
+	border: 1px solid #d9d9d9;
+}
+
+.myinput{
+	margin-left:10px;
+}
+#vubor{
+	visibility: hidden;
+}
+.time{
+	font-size:1.5em;
+	color:#69005e;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
